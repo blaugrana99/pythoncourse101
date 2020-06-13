@@ -4,6 +4,23 @@ if guess != secret:
     print("Nem, nem a " + str(guess) + ". Majd máskor.")
 else:
     print("Ügyes!")
+    
+    
+import random
+secret = random.randint(1,5)
+#with a small mistake :)
+
+for x in range(2):
+    guess = int(input("Szerinted mi a titkos szám 1 és 5 között? "))
+
+    if guess == secret:
+        print("Ügyes!")
+        break
+    elif guess != secret:
+        print("Nem, nem a " + str(guess) + ". Próbáld meg még egyszer.")
+        print(int(secret))
+    else:
+        print(int(secret))
 
 
 print("Ez egy alap számológép. Adj meg kérlek kettő db számot, majd az elvégezni kívánt művelet jelét: +, -, *, /")
