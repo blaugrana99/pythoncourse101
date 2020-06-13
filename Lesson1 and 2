@@ -52,3 +52,13 @@ elif mood == "sad":
     print("It is bad to see you " + str(mood) +". " + "Cheer up, mate!")
 else:
     print("I don't recognize this mood, mate")
+    
+    
+password = input ("Mi a jelszavad? ")
+if len(password) == 5:
+        if password == "admin":
+            print("Üdv!")
+elif password == "":
+    print ("Nem adtál meg jelszót, próbáld újra, baszod!")
+else:
+    print("Majd máskor, gyökér")
