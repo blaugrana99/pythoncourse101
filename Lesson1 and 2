@@ -62,3 +62,14 @@ elif password == "":
     print ("Nem adtál meg jelszót, próbáld újra, baszod!")
 else:
     print("Majd máskor, gyökér")
+    
+
+print("Dobókocka. Dobj addig, amíg hatosod lesz!")
+import random
+while True:
+    cube = random.randint(1,6)
+    if cube == 6:
+        print("6!")
+        break
+    else:
+        print("Nem hatos. " + str(cube))
