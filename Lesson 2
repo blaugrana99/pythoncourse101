@@ -1,0 +1,14 @@
+print("mérföld-kilométer átváltás. adj meg egy távolságot és egy mértékegységet.")
+dist = int(input("a távolság: "))
+unit = input("mérföld vagy kilométer? (1/2): ")
+
+for x in range (1):
+    if unit == "1":
+        km = dist * 1.609
+        print("a megadott távolság " + str(km) + " km")
+    elif unit == "2":
+        merfold = dist * 0.621
+        print("a megadott távolság " + str(merfold) + " mérföld")
+    else:
+        print("valamelyik változó nem volt megfelelő. futtasd újra az átváltót!")
+        input("szeretnél másik távolságot átváltáni? i/n ")
