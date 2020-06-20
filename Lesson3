@@ -1,0 +1,65 @@
+import random
+secret = random.randint(1,30)
+proba = 0
+
+with open("bestscore.txt", "r") as best_file:
+    best = best_file.read()
+    print ("az eddigi legkevesebb kísérletek száma: " + str(best))
+
+with open("score.txt", "r") as score_file:
+    last = score_file.read()
+    print ("a legutóbbi alkalom kísérleteinek száma: " + str(last))
+
+while True:
+    guess = int(input("szerinted mi a 'titkos' szám 1 és 30 között? "))
+    proba += 1
+
+    if guess == secret:
+        print("ügyes!")
+        print("a kísérletek száma: "+ str(proba))
+        with open("score.txt", "w") as score_file:
+            best_score = int(best_file.write(str(proba)))
+            if int(best_score) > int(proba):
+                with open("bestscore.txt", "w") as best_file:
+                    best_file.write(str(proba))
+        break
+    elif guess > secret:
+        print("nem, nem a " + str(guess) + ". próbáld meg egy kisebbel.")
+    elif guess < secret:
+        print("nem, nem a " + str(guess) + ". próbáld meg egy nagyobbal.")
+    else:
+        print(int(secret))
+   #nem működik, hiba a 21 sorban: ValueError: I/O operation on closed file.
+   
+  
+
+import random
+secret = random.randint(1,30)
+proba = 0
+
+with open("bestscore.txt", "r") as best_file:
+    best = best_file.read()
+    print ("az eddigi legkevesebb kísérletek száma: " + str(best))
+
+with open("score.txt", "r") as score_file:
+    last = score_file.read()
+    print ("a legutóbbi alkalom kísérleteinek száma: " + str(last))
+
+while True:
+    guess = int(input("szerinted mi a 'titkos' szám 1 és 30 között? "))
+    proba += 1
+
+    if guess == secret:
+        print("ügyes!")
+        print("a kísérletek száma: "+ str(proba))
+        with open("score.txt", "w") as score_file:
+            best_score = int(score_file.write(str(proba)))
+
+        break
+    elif guess > secret:
+        print("nem, nem a " + str(guess) + ". próbáld meg egy kisebbel.")
+    elif guess < secret:
+        print("nem, nem a " + str(guess) + ". próbáld meg egy nagyobbal.")
+    else:
+        print(int(secret))
+   #működik, de a legutolsó eredményt mindig felülírja
